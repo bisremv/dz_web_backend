@@ -16,18 +16,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "project")
-
-public class Projects {
+@Table(name = "leader")
+public class Leaders {
     @Id
     int id;
 
     @Column(columnDefinition = "Text")
     String img;
     String name;
-    @Column(columnDefinition = "Text")
-    String description;
-    @Column(columnDefinition = "Text")
-    String subtitle;
-
 }
