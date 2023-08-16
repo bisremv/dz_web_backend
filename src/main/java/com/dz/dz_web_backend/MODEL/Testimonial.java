@@ -1,5 +1,6 @@
 package com.dz.dz_web_backend.MODEL;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -22,6 +23,8 @@ public class Testimonial {
     int id;
     String img;
     String name;
+
+    @Column(columnDefinition = "TEXT")
     String description;
     String job;
 

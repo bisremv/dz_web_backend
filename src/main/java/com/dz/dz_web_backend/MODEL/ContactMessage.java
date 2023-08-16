@@ -1,5 +1,6 @@
 package com.dz.dz_web_backend.MODEL;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,5 +12,6 @@ public class ContactMessage {
     int id;
     String name;
     String email;
+    @Column(columnDefinition = "TEXT")
     String message;
 }
