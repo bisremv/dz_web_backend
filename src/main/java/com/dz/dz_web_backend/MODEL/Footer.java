@@ -1,6 +1,5 @@
 package com.dz.dz_web_backend.MODEL;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,15 +12,12 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-@Table(name = "general")
-public class General {
+@Table(name = "footer")
+public class Footer {
     @Id
     int id;
-    String category;
-    String title;
-    @Column(columnDefinition = "TEXT")
-    String content;
+    String description;
 }
