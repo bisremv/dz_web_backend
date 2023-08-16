@@ -1,6 +1,5 @@
 package com.dz.dz_web_backend.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,6 @@ public class CardController {
 
     @GetMapping("/getall/{category}")
     public List<Card> getAllcardsBycategory(@PathVariable String category) {
-        String decodedPathVariable;
-        try {
-            decodedPathVariable = java.net.URLDecoder.decode(category, "UTF-8");
-            return cardService.getAllcardsBycategory(decodedPathVariable);
-        } catch (UnsupportedEncodingException e) {
-            return cardService.getAllcardsBycategory(category);
-        }
+        return cardService.getAllcardsBycategory(category);
     }
 }
