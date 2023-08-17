@@ -1,6 +1,7 @@
 package com.dz.dz_web_backend.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,23 @@ public class SocialLinksService {
 
     public List<SocialLinks> getAllSocialLinks() {
         return (List<SocialLinks>) socialLinkDao.findAll();
+    }
+
+    public void setAllSocialLinks(List<SocialLinks> socialLink) {
+        socialLinkDao.saveAll(socialLink);
+
+    }
+
+    public void deleteSocialLinksById(int id) {
+        socialLinkDao.deleteById(id);
+    }
+
+    public void editSocialLinksById(SocialLinks socialLinks) {
+        socialLinkDao.save(socialLinks);
+
+    }
+
+    public Optional<SocialLinks> getSocialLinksByID(int id) {
+        return socialLinkDao.findById(id);
     }
 }

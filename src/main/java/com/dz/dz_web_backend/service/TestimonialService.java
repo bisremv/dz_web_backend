@@ -1,6 +1,7 @@
 package com.dz.dz_web_backend.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,23 @@ public class TestimonialService {
 
     public List<Testimonial> getAlltestimonial() {
         return (List<Testimonial>) testimonialDao.findAll();
+    }
+
+    public void setAllTestimonial(List<Testimonial> testimonial) {
+        testimonialDao.saveAll(testimonial);
+
+    }
+
+    public void deleteTestimonialById(int id) {
+        testimonialDao.deleteById(id);
+    }
+
+    public void editTestimonialById(Testimonial testimonial) {
+        testimonialDao.save(testimonial);
+
+    }
+
+    public Optional<Testimonial> getTestimonialByID(int id) {
+        return testimonialDao.findById(id);
     }
 }

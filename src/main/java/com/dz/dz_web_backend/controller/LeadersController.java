@@ -1,9 +1,15 @@
 package com.dz.dz_web_backend.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +29,25 @@ public class LeadersController {
     @GetMapping("/getall")
     public List<Leaders> getAllLeaders() {
         return leadersService.getAllLeaders();
-
     }
 
+    @GetMapping("/getbyid/{id}")
+    public Optional<Leaders> getLeadersByID(@PathVariable int id) {
+        return leadersService.getLeadersByID(id);
+    }
+
+    @PostMapping("/set")
+    public void setAllLeaders(@RequestBody List<Leaders> leaders) {
+        leadersService.setAllLeaders(leaders);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteLeadersById(@PathVariable int id) {
+        leadersService.deleteLeadersById(id);
+    }
+
+    @PutMapping("/edit")
+    public void editLeadersById(@RequestBody Leaders leaders) {
+        leadersService.editLeadersById(leaders);
+    }
 }

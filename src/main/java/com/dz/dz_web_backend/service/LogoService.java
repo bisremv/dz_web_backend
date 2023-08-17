@@ -1,6 +1,7 @@
 package com.dz.dz_web_backend.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,23 @@ public class LogoService {
 
     public List<Logo> getAllLogo() {
         return (List<Logo>) logoDao.findAll();
+    }
+
+    public void setAllLogo(List<Logo> logo) {
+        logoDao.saveAll(logo);
+
+    }
+
+    public void deleteLogoById(int id) {
+        logoDao.deleteById(id);
+    }
+
+    public void editLogoById(Logo logo) {
+        logoDao.save(logo);
+
+    }
+
+    public Optional<Logo> getLogoByID(int id) {
+        return logoDao.findById(id);
     }
 }
