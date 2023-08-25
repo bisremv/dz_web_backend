@@ -33,7 +33,7 @@ public class CardController {
 
     @GetMapping("/getbyid/{id}")
     public Optional<Card> getCardByID(@PathVariable int id) {
-        return CardService.getCardByID(id);
+        return cardService.getCardByID(id);
     }
 
     @PostMapping("/set")

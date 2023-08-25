@@ -33,11 +33,11 @@ public class GeneralController {
 
     @GetMapping("/getbyid/{id}")
     public Optional<General> getGeneralByID(@PathVariable int id) {
-        return GeneralService.getGeneralByID(id);
+        return generalService.getGeneralByID(id);
     }
 
     @PostMapping("/set")
-    public void setAllGeneral(@RequestBody List<General> general) {
+    public void setAllGeneral(@RequestBody General general) {
         generalService.setAllGeneral(general);
     }
 

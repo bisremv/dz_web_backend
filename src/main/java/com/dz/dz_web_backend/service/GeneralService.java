@@ -23,8 +23,8 @@ public class GeneralService {
         return (List<General>) generalDao.findAllByCategory(category);
     }
 
-    public void setAllGeneral(List<General> general) {
-        generalDao.saveAll(general);
+    public void setAllGeneral(General general) {
+        generalDao.save(general);
 
     }
 
