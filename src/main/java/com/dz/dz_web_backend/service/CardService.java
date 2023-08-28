@@ -23,8 +23,8 @@ public class CardService {
         return (List<Card>) cardDao.findByCategory(category);
     }
 
-    public void setAllCard(List<Card> card) {
-        cardDao.saveAll(card);
+    public void setCard(Card card) {
+        cardDao.save(card);
 
     }
 

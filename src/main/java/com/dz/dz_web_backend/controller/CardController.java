@@ -37,8 +37,8 @@ public class CardController {
     }
 
     @PostMapping("/set")
-    public void setAllCard(@RequestBody List<Card> card) {
-        cardService.setAllCard(card);
+    public void setCard(@RequestBody Card card) {
+        cardService.setCard(card);
     }
 
     @DeleteMapping("/delete/{id}")
