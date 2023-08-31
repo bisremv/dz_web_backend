@@ -38,7 +38,7 @@ public class FooterController {
     }
 
     @PostMapping("/set")
-    public void setAllFooter(@RequestBody List<Footer> footer) {
+    public void setAllFooter(@RequestBody Footer footer) {
         footerService.setAllFooter(footer);
     }
 

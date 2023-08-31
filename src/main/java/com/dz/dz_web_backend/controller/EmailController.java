@@ -36,8 +36,8 @@ public class EmailController {
     }
 
     @PostMapping("/set")
-    public void setAllEmail(@RequestBody List<Emails> email) {
-        emailService.setAllEmail(email);
+    public void setEmail(@RequestBody Emails email) {
+        emailService.setEmail(email);
     }
 
     @DeleteMapping("/delete/{id}")

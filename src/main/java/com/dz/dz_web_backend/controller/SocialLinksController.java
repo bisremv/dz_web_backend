@@ -39,7 +39,7 @@ public class SocialLinksController {
     }
 
     @PostMapping("/set")
-    public void setAllSocialLinks(@RequestBody List<SocialLinks> socialLinks) {
+    public void setAllSocialLinks(@RequestBody SocialLinks socialLinks) {
         socialLinksService.setAllSocialLinks(socialLinks);
     }
 

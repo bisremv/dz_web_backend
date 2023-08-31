@@ -22,8 +22,8 @@ public class FooterService {
         return (List<Footer>) footerDao.findAll();
     }
 
-    public void setAllFooter(List<Footer> footer) {
-        footerDao.saveAll(footer);
+    public void setAllFooter(Footer footer) {
+        footerDao.save(footer);
 
     }
 

@@ -22,8 +22,8 @@ public class LeadersService {
         return (List<Leaders>) leadersDao.findAll();
     }
 
-    public void setAllLeaders(List<Leaders> leaders) {
-        leadersDao.saveAll(leaders);
+    public void setAllLeaders(Leaders leaders) {
+        leadersDao.save(leaders);
 
     }
 

@@ -37,8 +37,8 @@ public class ProjectsController {
     }
 
     @PostMapping("/set")
-    public void setAllProjects(@RequestBody List<Projects> projects) {
-        projectsService.setAllProjects(projects);
+    public void setProjects(@RequestBody Projects projects) {
+        projectsService.setProjects(projects);
     }
 
     @DeleteMapping("/delete/{id}")

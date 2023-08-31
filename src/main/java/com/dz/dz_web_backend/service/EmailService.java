@@ -22,8 +22,8 @@ public class EmailService {
         return (List<Emails>) emailDao.findAll();
     }
 
-    public void setAllEmail(List<Emails> email) {
-        emailDao.saveAll(email);
+    public void setEmail(Emails email) {
+        emailDao.save(email);
 
     }
 

@@ -36,8 +36,8 @@ public class ExperienceController {
     }
 
     @PostMapping("/set")
-    public void setAllExperience(@RequestBody List<Experience> experience) {
-        experienceService.setAllExperience(experience);
+    public void setExperience(@RequestBody Experience experience) {
+        experienceService.setExperience(experience);
     }
 
     @DeleteMapping("/delete/{id}")

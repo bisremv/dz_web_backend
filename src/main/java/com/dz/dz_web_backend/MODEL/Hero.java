@@ -20,7 +20,7 @@ import lombok.ToString;
 public class Hero {
     @Id
     int id;
-    String titles;
+    String title;
     String subtitle;
     @Column(columnDefinition = "Text")
     String content;

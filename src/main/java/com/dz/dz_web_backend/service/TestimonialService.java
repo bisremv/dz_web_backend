@@ -23,8 +23,8 @@ public class TestimonialService {
         return (List<Testimonial>) testimonialDao.findAll();
     }
 
-    public void setAllTestimonial(List<Testimonial> testimonial) {
-        testimonialDao.saveAll(testimonial);
+    public void setTestimonial(Testimonial testimonial) {
+        testimonialDao.save(testimonial);
 
     }
 

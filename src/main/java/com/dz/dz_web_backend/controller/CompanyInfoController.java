@@ -38,8 +38,8 @@ public class CompanyInfoController {
     }
 
     @PostMapping("/set")
-    public void setAllCompanyInfo(@RequestBody List<CompanyInfo> companyInfo) {
-        companyInfoService.setAllCompanyInfo(companyInfo);
+    public void setCompanyInfo(@RequestBody CompanyInfo companyInfo) {
+        companyInfoService.setCompanyInfo(companyInfo);
     }
 
     @DeleteMapping("/delete/{id}")

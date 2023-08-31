@@ -23,8 +23,8 @@ public class AboutService {
         return (List<About>) aboutDao.findAll();
     }
 
-    public void setAllAbout(List<About> about) {
-        aboutDao.saveAll(about);
+    public void setAbout(About about) {
+        aboutDao.save(about);
 
     }
 

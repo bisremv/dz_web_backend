@@ -37,8 +37,8 @@ public class TestimonialController {
     }
 
     @PostMapping("/set")
-    public void setAllTestimonial(@RequestBody List<Testimonial> testimonial) {
-        testimonialService.setAllTestimonial(testimonial);
+    public void setTestimonial(@RequestBody Testimonial testimonial) {
+        testimonialService.setTestimonial(testimonial);
     }
 
     @DeleteMapping("/delete/{id}")

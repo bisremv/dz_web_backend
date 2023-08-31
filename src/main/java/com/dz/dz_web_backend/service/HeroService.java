@@ -24,8 +24,8 @@ public class HeroService {
         return (List<Hero>) heroDao.findAll();
     }
 
-    public void setAllHero(List<Hero> hero) {
-        heroDao.saveAll(hero);
+    public void setHero(Hero hero) {
+        heroDao.save(hero);
 
     }
 

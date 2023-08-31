@@ -22,8 +22,8 @@ public class SocialLinksService {
         return (List<SocialLinks>) socialLinkDao.findAll();
     }
 
-    public void setAllSocialLinks(List<SocialLinks> socialLink) {
-        socialLinkDao.saveAll(socialLink);
+    public void setAllSocialLinks(SocialLinks socialLink) {
+        socialLinkDao.save(socialLink);
 
     }
 

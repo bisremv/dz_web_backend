@@ -23,8 +23,8 @@ public class ProjectsService {
         return (List<Projects>) projectsDao.findAll();
     }
 
-    public void setAllProjects(List<Projects> projects) {
-        projectsDao.saveAll(projects);
+    public void setProjects(Projects projects) {
+        projectsDao.save(projects);
 
     }
 

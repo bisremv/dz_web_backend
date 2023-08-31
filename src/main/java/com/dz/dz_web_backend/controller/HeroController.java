@@ -39,8 +39,8 @@ public class HeroController {
     }
 
     @PostMapping("/set")
-    public void setAllHero(@RequestBody List<Hero> hero) {
-        heroService.setAllHero(hero);
+    public void setAllHero(@RequestBody Hero hero) {
+        heroService.setHero(hero);
     }
 
     @DeleteMapping("/delete/{id}")

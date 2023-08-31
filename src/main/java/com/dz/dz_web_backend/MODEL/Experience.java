@@ -20,7 +20,7 @@ import lombok.ToString;
 public class Experience {
     @Id
     int id;
-    int number;
+    String number;
     String operator;
     @Column(columnDefinition = "Text")
     String icon;

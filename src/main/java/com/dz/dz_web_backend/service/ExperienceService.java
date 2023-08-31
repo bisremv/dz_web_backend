@@ -23,8 +23,8 @@ public class ExperienceService {
         return (List<Experience>) experienceDao.findAll();
     }
 
-    public void setAllExperience(List<Experience> experience) {
-        experienceDao.saveAll(experience);
+    public void setExperience(Experience experience) {
+        experienceDao.save(experience);
 
     }
 

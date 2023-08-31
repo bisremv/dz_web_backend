@@ -21,12 +21,14 @@ import lombok.ToString;
 public class About {
     @Id
     int id;
+
+    @Column(columnDefinition = "TEXT")
     String img1;
+
+    @Column(columnDefinition = "TEXT")
     String img2;
     @Column(columnDefinition = "TEXT")
     String description;
     String title;
     String subtitle;
-    String img_subtitle;
-    String img_title;
 }

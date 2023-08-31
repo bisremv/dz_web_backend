@@ -24,8 +24,8 @@ public class CompanyInfoService {
         return (List<CompanyInfo>) companyInfoDao.findAll();
     }
 
-    public void setAllCompanyInfo(List<CompanyInfo> companyInfo) {
-        companyInfoDao.saveAll(companyInfo);
+    public void setCompanyInfo(CompanyInfo companyInfo) {
+        companyInfoDao.save(companyInfo);
 
     }
 

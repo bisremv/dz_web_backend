@@ -37,7 +37,7 @@ public class LogoController {
     }
 
     @PostMapping("/set")
-    public void setAllLogo(@RequestBody List<Logo> logo) {
+    public void setAllLogo(@RequestBody Logo logo) {
         logoService.setAllLogo(logo);
     }
 

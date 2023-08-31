@@ -23,8 +23,8 @@ public class PhonesService {
         return (List<Phones>) phonesDao.findAll();
     }
 
-    public void setAllPhones(List<Phones> phones) {
-        phonesDao.saveAll(phones);
+    public void setAllPhones(Phones phones) {
+        phonesDao.save(phones);
 
     }
 

@@ -44,10 +44,15 @@ public class ImageService {
     }
 
     @Transactional
-    public void ChangeImage(MultipartFile file, String oldname) throws IOException {
+    public void ChangeImage(MultipartFile file, String oldname) {
         Optional<Image> model = imageService.findByName(oldname);
         long id = model.get().getId();
-        uploadImage(file);
+        try {
+            uploadImage(file);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         String existingImagePath = model.get().getImagePath();
         int count = model.get().getUsage_count();
         if (count < 2) {
@@ -68,21 +73,35 @@ public class ImageService {
 
     }
 
-    public Image saveImg(MultipartFile file, int usage_count) throws IOException {
+    public Image saveImg(MultipartFile file, int usage_count) {
         String fullPath = PATH + file.getOriginalFilename();
         Image pImage = new Image();
         pImage.setName(file.getOriginalFilename());
         pImage.setType(file.getContentType());
         pImage.setImagePath(fullPath);
         pImage.setUsage_count(usage_count + 1);
-        file.transferTo(new File(fullPath));
+        try {
+            file.transferTo(new File(fullPath));
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         return imageService.save(pImage);
     }
 
-    public byte[] downloadImage(String fileName) throws IOException {
+    public byte[] downloadImage(String fileName) {
         Optional<Image> imageObject = imageService.findByName(fileName);
         String fullPath = imageObject.get().getImagePath();
-        return Files.readAllBytes(new File(fullPath).toPath());
+        try {
+            return Files.readAllBytes(new File(fullPath).toPath());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Transactional

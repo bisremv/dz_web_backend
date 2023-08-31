@@ -37,7 +37,7 @@ public class LeadersController {
     }
 
     @PostMapping("/set")
-    public void setAllLeaders(@RequestBody List<Leaders> leaders) {
+    public void setAllLeaders(@RequestBody Leaders leaders) {
         leadersService.setAllLeaders(leaders);
     }
 

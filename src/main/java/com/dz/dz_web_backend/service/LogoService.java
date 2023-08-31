@@ -22,8 +22,8 @@ public class LogoService {
         return (List<Logo>) logoDao.findAll();
     }
 
-    public void setAllLogo(List<Logo> logo) {
-        logoDao.saveAll(logo);
+    public void setAllLogo(Logo logo) {
+        logoDao.save(logo);
 
     }
 

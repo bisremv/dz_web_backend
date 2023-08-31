@@ -38,7 +38,7 @@ public class PhonesController {
     }
 
     @PostMapping("/set")
-    public void setAllPhones(@RequestBody List<Phones> phones) {
+    public void setAllPhones(@RequestBody Phones phones) {
         phonesService.setAllPhones(phones);
     }
 

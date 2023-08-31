@@ -39,8 +39,8 @@ public class AboutController {
     }
 
     @PostMapping("/set")
-    public void setAllAbout(@RequestBody List<About> about) {
-        aboutService.setAllAbout(about);
+    public void setAllAbout(@RequestBody About about) {
+        aboutService.setAbout(about);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "image")
 public class Image {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     // this is the file name directly from teh source and used as the last part of
     // directory path and to check if other instance are there
